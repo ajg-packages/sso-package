@@ -1,5 +1,5 @@
 <?php
-namespace Cyrex\SSO\SSOProvider;
+namespace Cyrex\SSO;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth\SSO;
+namespace Cyrex\Controllers\Auth\SSO;
 
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Contracts\Auth\Authenticatable;

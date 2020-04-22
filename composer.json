@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Newtech\\SSO\\": "src/"
+            "Cyrex\\SSO\\": "src/"
         },
         "files": [
             "src/app/Http/helpers.php"
