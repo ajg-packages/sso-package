@@ -1,0 +1,31 @@
+{
+    "name": "cyrex/sso",
+    "description": "This package connects products to the Single Sign On System.",
+    "homepage": "https://github.com/newtechautomotiveservices/SSO-Bridge-Package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Gosselin",
+            "email": "maninasuitofficial@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Newtech\\SSO\\": "src/"
+        },
+        "files": [
+            "src/app/Http/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cyrex\\SSO\\SSOProvider"
+            ]
+        }
+    }
+}
