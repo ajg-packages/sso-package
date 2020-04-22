@@ -1,6 +1,6 @@
 <?php
 
-namespace Cyrex\Controllers\Auth\SSO;
+namespace Cyrex\SSO\Controllers;
 
 use Illuminate\Contracts\Auth\Guard as LGuard;
 use Illuminate\Contracts\Auth\UserProvider;

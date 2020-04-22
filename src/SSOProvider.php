@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Gate;
 
-use Cyrex\Controllers\Auth\SSO\User;
-use Cyrex\Controllers\Auth\SSO\Guard;
-use Cyrex\Controllers\Auth\SSO\Provider;
+use Cyrex\SSO\Controllers\User;
+use Cyrex\SSO\Controllers\Guard;
+use Cyrex\SSO\Controllers\Provider;
 
 class SSOProvider extends ServiceProvider
 {
