@@ -6,7 +6,7 @@ Route::middleware(['web'])->group(function () {
 
     Route::get('/logout', function() {
         \Auth::logout();
-        return view('auth.logout');
+        return view('sso::logout');
     });
 
     Route::get('/user', function() {
