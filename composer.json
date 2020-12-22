@@ -1,7 +1,7 @@
 {
     "name": "cyrex/sso",
-    "description": "This package connects products to the Single Sign On System.",
-    "homepage": "https://github.com/newtechautomotiveservices/SSO-Bridge-Package",
+    "description": "Laravel SSO.",
+    "homepage": "",
     "license": "MIT",
     "authors": [
         {
