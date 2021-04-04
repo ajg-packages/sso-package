@@ -27,7 +27,10 @@ class SSOProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->publishes([__DIR__.'/resources/views/errors' => resource_path('views/errors'),]);
+        $this->publishes([
+            __DIR__.'/resources/views/errors' => resource_path('views/errors'),
+            __DIR__.'/config/config.php' => config_path('sso.php')
+        ]);
 
         Gate::define('sso', function(User $user, ...$action){
             return true;
