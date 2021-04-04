@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Gate;
 
-use Cyrex\SSO\Controllers\User;
-use Cyrex\SSO\Controllers\Guard;
-use Cyrex\SSO\Controllers\Provider;
+use Cyrex\SSO\app\Http\Controllers\User;
+use Cyrex\SSO\app\Http\Controllers\Guard;
+use Cyrex\SSO\app\Http\Controllers\Provider;
 
 class SSOProvider extends ServiceProvider
 {
@@ -27,6 +27,17 @@ class SSOProvider extends ServiceProvider
      */
     public function register()
     {
+        if($this->app['config']->has("auth.defaults.guard") != "sso") {
+            $this->app['config']->set("auth.defaults.guard", "sso");
+        }
+        if(!$this->app['config']->has("auth.guards.sso")){
+            $this->app['config']->set("auth.guards.sso", Array('driver' => 'sso', 'provider' => 'sso'));
+        }
+        if(!$this->app['config']->has("auth.providers.sso")){
+            $this->app['config']->set("auth.providers.sso", Array('driver' => 'sso'));
+        }
+
+
         $this->publishes([
             __DIR__.'/resources/views/errors' => resource_path('views/errors'),
             __DIR__.'/config/config.php' => config_path('sso.php')

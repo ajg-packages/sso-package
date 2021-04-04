@@ -10,11 +10,11 @@ Route::middleware(['web'])->group(function () {
     });
 
     Route::get('/user', function(Illuminate\Http\Request $request) {
-        $access_token = $request->session()->get("access_token");
+        $token = json_decode($request->session()->get("user"), true)['token'];
         $http = new \GuzzleHttp\Client;
         $response = $http->get(config('sso.auth.url') . '/api/user', [
             'headers' => [
-                'Authorization' => "Bearer " . $access_token
+                'Authorization' => "Bearer " . $token['access_token']
             ],
         ]);
         $user = collect(json_decode((string) $response->getBody(), true));
@@ -48,9 +48,6 @@ Route::middleware(['web'])->group(function () {
             'code' => $request->code
         ]);
         $token = json_decode((string) $response->getBody(), true);
-
-        $request->session()->put($token);
-
         // $http = new \GuzzleHttp\Client;
         // $response = $http->get(config('sso.auth.url') . '/api/user', [
         //     'headers' => [
