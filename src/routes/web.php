@@ -48,15 +48,15 @@ Route::middleware(['web'])->group(function () {
             'code' => $request->code
         ]);
         $token = json_decode((string) $response->getBody(), true);
-        // $http = new \GuzzleHttp\Client;
-        // $response = $http->get(config('sso.auth.url') . '/api/user', [
-        //     'headers' => [
-        //         'Authorization' => "Bearer " . $token['access_token']
-        //     ],
-        // ]);
-        // $user = collect(json_decode((string) $response->getBody(), true));
-        // $user['token'] = $token;
-        // session()->put('user', $user);
+        $http = new \GuzzleHttp\Client;
+        $response = $http->get(config('sso.auth.url') . '/api/user', [
+            'headers' => [
+                'Authorization' => "Bearer " . $token['access_token']
+            ],
+        ]);
+        $user = collect(json_decode((string) $response->getBody(), true));
+        $user['token'] = $token;
+        session()->put('user', $user);
         return redirect('/user');
     });
 });
