@@ -57,6 +57,6 @@ Route::middleware(['web'])->group(function () {
         $user = collect(json_decode((string) $response->getBody(), true));
         $user['token'] = $token;
         session()->put('user', $user);
-        return redirect('/user');
+        return redirect('/');
     });
 });
