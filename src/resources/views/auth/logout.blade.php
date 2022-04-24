@@ -64,11 +64,11 @@ span:nth-child(4){
   <span></span>
   <span></span>
 </div>
-<img src="{{env('AUTHORIZATION_SERVER_URL')}}/logout" style="visibility: hidden;">
+<img src="{{env('AUTHORIZATION_SERVER_URL', 'https://auth.cyrexag.com')}}/logout" style="visibility: hidden;">
 
 <script type="text/javascript">
 	setTimeout(function(){
-            window.location = "/";
-         }, 1500);
+    window.location = "/";
+  }, 1500);
     
 </script>
