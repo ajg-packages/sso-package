@@ -1,5 +1,5 @@
 # laravel-sso-package
-The package for my <a href="https://auth.cyrexag.com">SSO package</a> that is under development.
+The package for my <a href="https://auth.cyrexag.com">SSO application</a> that is under development.
 
 ## Installation
 1. Run `composer require cyrex/sso`.
