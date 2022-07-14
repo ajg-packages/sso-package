@@ -1,5 +1,5 @@
 # laravel-sso-package
-The package for my currently private Single Sign On that will be public and open source soon.
+The package for my <a href="https://auth.cyrexag.com">SSO package</a> that is under development.
 
 ## Installation
 1. Run `composer require cyrex/sso`.
